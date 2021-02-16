@@ -15,8 +15,15 @@
   "author": "Almedin Hodzic",
   "license": "ISC",
   "dependencies": {
+    "@types/react-redux": "^7.1.16",
+    "axios": "^0.21.1",
+    "moment": "^2.29.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-redux": "^7.2.2",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
     "webpack-dev-server": "^3.11.2"
   },
   "devDependencies": {
