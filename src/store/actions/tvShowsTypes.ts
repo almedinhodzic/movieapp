@@ -51,15 +51,15 @@ export interface ShowActors {
 
 export interface ShowState {
   airingTodayShows: Shows | null;
-  PopularShows: Shows | null;
+  popularShows: Shows | null;
   onTheAirShows: Shows | null;
   topRatedShows: Shows | null;
   trendingShows: Shows | null;
   showGenres: ShowGenres | null;
-  similarShows: Shows;
-  singleShow: SingleShow;
-  showTrailers: ShowTrailers;
-  showActors: ShowActors;
+  similarShows: Shows | null;
+  singleShow: SingleShow | null;
+  showTrailers: ShowTrailers | null;
+  showActors: ShowActors | null;
   loading: boolean;
   error: string;
 }

@@ -37,9 +37,9 @@ export interface PopularActors {
 }
 
 export interface ActorState {
-  singleActor: ActorInfos;
-  popularActors: PopularActors;
-  actorMoviesAndShows: ActorMoviesAndShows;
+  singleActor: ActorInfos | null;
+  popularActors: PopularActors | null;
+  actorMoviesAndShows: ActorMoviesAndShows | null;
   loading: boolean;
   error: string;
 }
