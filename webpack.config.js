@@ -1,8 +1,9 @@
 const { resolve } = require("path");
 
+const Dotenv = require("dotenv-webpack");
+
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const { assert } = require("console");
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -52,6 +53,8 @@ const config = {
       template: "./public/index.html",
       filename: "index.html",
     }),
+
+    new Dotenv(),
   ],
 };
 
