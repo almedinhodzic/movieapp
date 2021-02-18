@@ -4,6 +4,7 @@ import {
   SpokenLanguages,
   TrailerResults,
   Results,
+  Trending,
 } from "./movieTypes";
 
 export const GET_AIRING_TODAY = "GET_AIRING_TODAY_SHOWS";
@@ -54,7 +55,7 @@ export interface ShowState {
   popularShows: Shows | null;
   onTheAirShows: Shows | null;
   topRatedShows: Shows | null;
-  trendingShows: Shows | null;
+  trendingShows: Trending | null;
   showGenres: ShowGenres | null;
   similarShows: Shows | null;
   singleShow: SingleShow | null;

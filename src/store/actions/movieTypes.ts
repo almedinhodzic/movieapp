@@ -9,16 +9,20 @@ export const GET_TRENDING_MOVIES = "GET_TRENDING_MOVIES";
 export const GET_MOVIE_BY_ID = "GET_MOVIE_BY_ID";
 export const GET_SIMILAR_MOVIES = "GET_SIMILAR_MOVIES";
 export const GET_GENRES = "GET_GENRES";
+export const GET_TRENDING_HOME_PAGE = "GET_TRENDING_HOME_PAGE";
 export const GET_TRAILERS = "GET_TRAILERS";
 export const GET_MOVIE_ACTORS = "GET_MOVIE_ACTORS";
 export const SET_MOVIE_ERROR = "SET_MOVIE_ERROR";
 
 export interface Results {
+  backdrop_path?: string | null;
   genre_ids: number[];
   id: number;
   poster_path: string | null;
-  title: string;
+  title?: string;
+  name?: string;
   vote_average: number;
+  media_type: string;
 }
 
 export interface Genres {
@@ -40,6 +44,10 @@ export interface Cast {
 }
 
 export interface Movies {
+  results: Results[];
+}
+
+export interface Trending {
   results: Results[];
 }
 
@@ -67,18 +75,23 @@ export interface MovieActors {
   cast: Cast[];
 }
 
+export interface TrendingHomePage {
+  results: Results[];
+}
+
 export interface MovieState {
   upcomingMovies: Movies | null;
   popularMovies: Movies | null;
   nowPlayingMovies: Movies | null;
   topRatedMovies: Movies | null;
   multiSearch: Movies | null;
-  trendingMovies: Movies | null;
+  trendingMovies: Trending | null;
   genreList: GenreList | null;
   singleMovie: SingleMovie | null;
   similarMovies: Movies | null;
   movieTrailers: MovieTrailers | null;
   movieActors: MovieActors | null;
+  trendingHomePage: TrendingHomePage | null;
   loading: boolean;
   error: string;
 }
@@ -114,6 +127,11 @@ interface GetTrendingMoviesAction {
 interface GetGenreListAction {
   type: typeof GET_GENRES;
   payload: GenreList;
+}
+
+interface GetTrendingHomePageAction {
+  type: typeof GET_TRENDING_HOME_PAGE;
+  payload: TrendingHomePage;
 }
 
 interface GetSingleMovieAction {
@@ -161,6 +179,7 @@ export type MoviesAction =
   | GetSimilarMoviesAction
   | GetMovieTrailersAction
   | GetMovieActorsAction
+  | GetTrendingHomePageAction
   | SetMovieLoadingAction
   | RemoveMovieLoadingAction
   | SetMovieErrorAction;

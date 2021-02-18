@@ -24,6 +24,7 @@ const initialState: MovieState = {
   multiSearch: null,
   trendingMovies: null,
   genreList: null,
+  trendingHomePage: null,
   singleMovie: null,
   similarMovies: null,
   movieTrailers: null,
