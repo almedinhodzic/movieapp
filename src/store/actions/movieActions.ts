@@ -130,8 +130,7 @@ export const searchMoviesAndShows = (name: string): MovieThunk => async (
   dispatch
 ) => {
   try {
-    const res = await movieDB.get(`search/multi?api_key=${apiKey}
-    &language=en-US&page=1&include_adult=false&query=${name}
+    const res = await movieDB.get(`/search/multi?api_key=${apiKey}&language=en-US&query=${name}&page=1&include_adult=false
 `);
     dispatch({
       type: SEARCH_MOVIES,
@@ -223,5 +222,13 @@ export const getMoviesContent = (): MovieThunk => async (dispatch) => {
   dispatch(getTopRatedMovies());
   dispatch(getNowPlayingMovies());
   dispatch(getTrendingMovies());
+  dispatch(removeMovieLoading());
+};
+
+export const getMoviesForHomePage = (): MovieThunk => async (dispatch) => {
+  dispatch(setMovieLoading());
+  dispatch(getTrendingHomePage());
+  dispatch(getPopularMovies());
+  dispatch(getTopRatedMovies());
   dispatch(removeMovieLoading());
 };

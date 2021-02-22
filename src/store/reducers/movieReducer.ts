@@ -12,6 +12,8 @@ import {
   SET_MOVIE_ERROR,
   SET_MOVIE_LOADING,
   REMOVE_MOVIE_LOADING,
+  GET_TRENDING_HOME_PAGE,
+  SEARCH_MOVIES,
   MovieState,
   MoviesAction,
 } from "../actions/movieTypes";
@@ -98,6 +100,12 @@ const movieReducer = (
         trendingMovies: action.payload,
         error: "",
       };
+    case GET_TRENDING_HOME_PAGE:
+      return {
+        ...state,
+        trendingHomePage: action.payload,
+        error: "",
+      };
     case SET_MOVIE_LOADING:
       return {
         ...state,
@@ -113,6 +121,13 @@ const movieReducer = (
         ...state,
         error: action.payload,
       };
+    case SEARCH_MOVIES:
+      return {
+        ...state,
+        multiSearch: action.payload,
+        error: "",
+      };
+
     default:
       return state;
   }

@@ -71,6 +71,7 @@ if (isProd) {
     compress: true,
     stats: "errors-only",
     overlay: true,
+    historyApiFallback: true,
   };
 }
 

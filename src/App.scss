@@ -1,17 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Martel Sans", sans-serif;
+}
+
+html {
+  height: 100%;
 }
 
 body {
-  background: #333;
+  padding-top: 9vh;
+  height: 100%;
+  width: 100%;
+  background: #18191a;
+  color: #d6d8d8;
 }
 
-h1 {
-  text-align: center;
-  color: red;
-  &:hover {
-    color: blue;
-  }
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #d6d8d8;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #6d1cac;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #6e1cacb0;
 }

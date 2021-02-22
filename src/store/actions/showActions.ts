@@ -182,8 +182,16 @@ export const getShowActors = (id: number): ShowThunk => async (dispatch) => {
 
 export const getShowsContent = (): ShowThunk => async (dispatch) => {
   dispatch(setShowLoading());
+  dispatch(getTrendingShows());
   dispatch(getAiringTodayShows());
   dispatch(getOnTheAirShows());
+  dispatch(getPopularShows());
+  dispatch(getTopRatedShows());
+  dispatch(removeShowLoading());
+};
+
+export const getShowsForHomePage = (): ShowThunk => async (dispatch) => {
+  dispatch(setShowLoading());
   dispatch(getPopularShows());
   dispatch(getTopRatedShows());
   dispatch(removeShowLoading());

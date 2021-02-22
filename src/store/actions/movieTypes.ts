@@ -117,6 +117,7 @@ interface GetTopRatedMoviesAction {
 
 interface GetMultiSearchMoviesAction {
   type: typeof SEARCH_MOVIES;
+  payload: Movies;
 }
 
 interface GetTrendingMoviesAction {
