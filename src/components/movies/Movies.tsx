@@ -27,34 +27,34 @@ const Movies: React.FC = () => {
   );
   return (
     <>
-      {trendingMovies && trendingMovies.results && (
+      {trendingMovies?.results && (
         <BackgroundCarousel
           results={trendingMovies.results}
           desc="TRENDING IN MOVIES"
         />
       )}
-      {nowPlayingMovies && nowPlayingMovies.results && (
+      {nowPlayingMovies?.results && (
         <ItemsCarousel
           heading="NOW PLAYING MOVIES"
           results={nowPlayingMovies.results}
           type="movie"
         />
       )}
-      {upcomingMovies && upcomingMovies.results && (
+      {upcomingMovies?.results && (
         <ItemsCarousel
           heading="UPCOMING MOVIES"
           results={upcomingMovies.results}
           type="movie"
         />
       )}
-      {popularMovies && popularMovies.results && (
+      {popularMovies?.results && (
         <ItemsCarousel
           heading="POPULAR MOVIES"
           results={popularMovies.results}
           type="movie"
         />
       )}
-      {topRatedMovies && topRatedMovies.results && (
+      {topRatedMovies?.results && (
         <ItemsCarousel
           heading="TOP RATED MOVIES"
           results={topRatedMovies.results}

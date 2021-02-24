@@ -1,20 +1,18 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+
 import { useHistory } from "react-router-dom";
-import { searchMoviesAndShows } from "../../store/actions/movieActions";
+
 import "./Search.scss";
 
 const Search: React.FC = () => {
   const [text, setText] = useState("");
-  const dispatch = useDispatch();
   const history = useHistory();
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setText(e.target.value);
   };
   const onSearch = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    dispatch(searchMoviesAndShows(text));
-    history.push("/search");
+    history.push(`/search/${text}`);
     setText("");
   };
   return (

@@ -27,34 +27,34 @@ const Shows: React.FC = () => {
   );
   return (
     <>
-      {trendingShows && trendingShows.results && (
+      {trendingShows?.results && (
         <BackgroundCarousel
           results={trendingShows.results}
           desc="TRENDING TV SHOWS"
         />
       )}
-      {airingToday && airingToday.results && (
+      {airingToday?.results && (
         <ItemsCarousel
           results={airingToday.results}
           heading="AIRING TODAY"
           type="show"
         />
       )}
-      {onTheAirShows && onTheAirShows.results && (
+      {onTheAirShows?.results && (
         <ItemsCarousel
           results={onTheAirShows.results}
           heading="ON THE AIR"
           type="show"
         />
       )}
-      {popularShows && popularShows.results && (
+      {popularShows?.results && (
         <ItemsCarousel
           heading="POPULAR TV SHOWS"
           results={popularShows.results}
           type="show"
         />
       )}
-      {topRatedShows && topRatedShows.results && (
+      {topRatedShows?.results && (
         <ItemsCarousel
           heading="TOP RATED TV SHOWS"
           results={topRatedShows.results}

@@ -19,7 +19,7 @@ const Navbar: React.FC = () => {
       <div className="main-nav-left-section">
         <Link to="/" className="main-nav-logo">
           <img
-            src="src\assets\logo.png"
+            src="\src\assets\logo.png"
             alt=""
             className="main-nav-logo__img"
           />

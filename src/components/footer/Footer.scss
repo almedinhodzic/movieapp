@@ -1,0 +1,26 @@
+.footer {
+  background: #242526;
+  color: #d6d8d8;
+  padding: 30px;
+  margin-top: 50px;
+  &-main-section {
+    display: flex;
+    justify-content: space-around;
+    & h4 {
+      letter-spacing: 3px;
+    }
+    &__link {
+      text-decoration: none;
+      display: block;
+      color: inherit;
+      margin-top: 10px;
+      transition: color 450ms;
+      &:hover {
+        color: #a084e9;
+      }
+      &__name {
+        text-align: center;
+      }
+    }
+  }
+}

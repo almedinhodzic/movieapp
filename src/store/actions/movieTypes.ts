@@ -23,6 +23,7 @@ export interface Results {
   name?: string;
   vote_average: number;
   media_type: string;
+  profile_path?: string | null;
 }
 
 export interface Genres {

@@ -80,8 +80,8 @@ const BackgroundCarousel: React.FC<Props> = ({ results, desc }: Props) => {
                   <Link
                     to={
                       item.media_type === "movie"
-                        ? "/details/movie"
-                        : "/details/show"
+                        ? `/movie/${item.id}`
+                        : `/show/${item.id}`
                     }
                     className="slider-section-slide-main-content-item"
                   >
@@ -98,15 +98,16 @@ const BackgroundCarousel: React.FC<Props> = ({ results, desc }: Props) => {
                     <Link
                       to={
                         item.media_type === "movie"
-                          ? "/details/movie"
-                          : "/details/show"
+                          ? `/movie/${item.id}`
+                          : `/show/${item.id}`
                       }
                       className="slider-section-slide-main-content-item__heading"
                     >
                       {item.title || item.name}
                     </Link>
                     <p className="slider-section-slide-main-content-item__info">
-                      Action | {item.vote_average} Rating
+                      {item.media_type.toUpperCase()} | {item.vote_average}{" "}
+                      Rating
                     </p>
                   </div>
                 </div>

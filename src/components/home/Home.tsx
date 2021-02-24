@@ -31,41 +31,40 @@ const Home: React.FC = () => {
 
   return (
     <>
-      {trendingHomePage && trendingHomePage.results && (
+      {trendingHomePage?.results && (
         <BackgroundCarousel
           results={trendingHomePage.results}
           desc="TRENDING IN MOVIES AND TV SHOWS"
         />
       )}
-      {popularMovies && popularMovies.results && (
+      {popularMovies?.results && (
         <ItemsCarousel
           heading="POPULAR MOVIES"
           results={popularMovies.results}
           type="movie"
         />
       )}
-      {topRatedMovies && topRatedMovies.results && (
+      {topRatedMovies?.results && (
         <ItemsCarousel
           heading="TOP RATED MOVIES"
           results={topRatedMovies.results}
           type="movie"
         />
       )}
-      {popularShows && popularShows.results && (
+      {popularShows?.results && (
         <ItemsCarousel
           heading="POPULAR TV SHOWS"
           results={popularShows.results}
           type="show"
         />
       )}
-      {topRatedShows && topRatedShows.results && (
+      {topRatedShows?.results && (
         <ItemsCarousel
           heading="TOP RATED TV SHOWS"
           results={topRatedShows.results}
           type="show"
         />
       )}
-      )
     </>
   );
 };

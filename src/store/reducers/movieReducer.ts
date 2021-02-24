@@ -120,6 +120,7 @@ const movieReducer = (
       return {
         ...state,
         error: action.payload,
+        multiSearch: null,
       };
     case SEARCH_MOVIES:
       return {

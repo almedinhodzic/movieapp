@@ -30,6 +30,8 @@ export interface ActorMoviesAndShows {
 export interface PopularActorsResults {
   name: string;
   profile_path: string | null;
+  id: number;
+  media_type: string;
 }
 
 export interface PopularActors {

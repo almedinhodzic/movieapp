@@ -1,0 +1,52 @@
+.search-carousel {
+  width: 80%;
+  margin: 50px auto;
+  &__heading {
+    font-size: 1.5rem;
+  }
+  &__line {
+    height: 1px;
+    margin: 30px auto;
+    background: linear-gradient(
+      to left,
+      rgba(109, 28, 172, 0) 0%,
+      rgb(109, 28, 172) 10%,
+      rgba(109, 28, 172, 1) 90%,
+      rgba(109, 28, 172, 0) 100%
+    );
+  }
+  &-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 30px;
+    &-poster {
+      height: 250px;
+      opacity: 0.5;
+      text-decoration: none;
+      position: relative;
+      width: 180px;
+      margin-top: 20px;
+      margin-bottom: 70px;
+      text-align: center;
+      &:hover {
+        opacity: 1;
+        cursor: pointer;
+      }
+      &__image {
+        height: 240px;
+        object-fit: contain;
+        margin-right: 15px;
+        width: 100%;
+      }
+      &__title {
+        display: block;
+        text-decoration: none;
+        color: #cfd1d1;
+      }
+    }
+  }
+}
