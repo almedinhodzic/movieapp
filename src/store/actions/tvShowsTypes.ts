@@ -42,8 +42,9 @@ export interface SingleShow {
   name: string;
   status: string;
   overview: string;
-  vote_average: string;
+  vote_average: number;
   spoken_languages: SpokenLanguages;
+  poster_path: string | null;
 }
 
 export interface ShowActors {

@@ -25,7 +25,8 @@
       object-fit: contain;
       margin-right: 15px;
     }
-    &__icon {
+    &__icon,
+    &__name {
       position: absolute;
       top: 0;
       left: 0;

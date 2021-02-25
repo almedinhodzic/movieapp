@@ -22,7 +22,7 @@ const SearchCarousel: React.FC<Props> = ({
   return (
     <>
       <Link
-        to={`/${mediaType}/${id}`}
+        to={`/${mediaType === "person" ? "actor" : mediaType}/${id}`}
         className="search-carousel-content-poster"
       >
         <img

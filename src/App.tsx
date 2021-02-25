@@ -5,12 +5,14 @@ import PopularActors from "./components/actors/PopularActors";
 import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
 import Navbar from "./components/layout/Navbar";
+import Movie from "./components/movie/Movie";
 import Movies from "./components/movies/Movies";
 import NowPlayingMovies from "./components/movies/NowPlayingMovies";
 import PopularMovies from "./components/movies/PopularMovies";
 import TopRatedMovies from "./components/movies/TopRatedMovies";
 import UpcomingMovies from "./components/movies/UpcomingMovies";
 import SearchResults from "./components/searchResults/SearchResults";
+import Show from "./components/show/Show";
 import AiringTodayShows from "./components/shows/AiringTodayShows";
 import OnTheAirShows from "./components/shows/OnTheAirShows";
 import PopularShows from "./components/shows/PopularShows";
@@ -40,6 +42,7 @@ const App: React.FC = () => {
           exact
           component={NowPlayingMovies}
         />
+        <Route path="/movie/:id" exact component={Movie} />
         <Route path="/shows" exact component={Shows} />
         <Route path="/shows/popular-shows" exact component={PopularShows} />
         <Route
@@ -53,6 +56,7 @@ const App: React.FC = () => {
           exact
           component={AiringTodayShows}
         />
+        <Route path="/show/:id" exact component={Show} />
         <Route path="/actors" exact component={PopularActors} />
         <Route path="/search/:name" exact component={SearchResults} />
       </Switch>

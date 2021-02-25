@@ -34,7 +34,7 @@ const SearchResults: React.FC = () => {
               posterImage={item.poster_path}
               title={item.title}
               name={item.name}
-              mediaType="actors"
+              mediaType={item.media_type}
               profileImage={item.profile_path}
             />
           );

@@ -107,7 +107,7 @@ const BackgroundCarousel: React.FC<Props> = ({ results, desc }: Props) => {
                     </Link>
                     <p className="slider-section-slide-main-content-item__info">
                       {item.media_type.toUpperCase()} | {item.vote_average}{" "}
-                      Rating
+                      RATING
                     </p>
                   </div>
                 </div>

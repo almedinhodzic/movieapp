@@ -41,7 +41,8 @@ export interface TrailerResults {
 export interface Cast {
   id: number;
   name: string;
-  profile_path: string | null;
+  profile_path?: string | null;
+  poster_path?: string | null;
 }
 
 export interface Movies {

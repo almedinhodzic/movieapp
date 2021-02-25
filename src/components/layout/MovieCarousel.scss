@@ -1,0 +1,73 @@
+.movie-section {
+  height: 91vh;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  // Problems with api, changing auto size
+  background-size: cover !important;
+  &-btn {
+    z-index: 1;
+    position: absolute;
+    top: 85%;
+    left: 48%;
+    background: transparent;
+    color: #d6d8d8;
+    font-size: 3rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    &:hover {
+      color: #a084e9;
+    }
+    &__icon {
+      animation: scrollBottom 0.5s alternate ease infinite;
+      font-size: 4rem;
+    }
+  }
+  &-poster {
+    position: absolute;
+    height: 200px;
+    width: 700px;
+    bottom: 8%;
+    left: 3%;
+    color: #d6d8d8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__image {
+      object-fit: contain;
+      height: 190px;
+      width: 170px;
+      margin-right: 50px;
+    }
+    &-content {
+      width: 100%;
+      &__heading {
+        font-size: 2rem;
+      }
+      &__desc,
+      &__info {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  &-summary {
+    width: 80%;
+    margin: 30px auto;
+    &__heading {
+      font-size: 1.5rem;
+    }
+    &__text {
+      font-size: 1rem;
+    }
+  }
+}
+
+@keyframes scrollBottom {
+  from {
+    transform: translateY(-1px);
+  }
+  to {
+    transform: translateY(2px);
+  }
+}

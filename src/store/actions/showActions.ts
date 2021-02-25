@@ -114,7 +114,7 @@ export const getShowGenreList = (): ShowThunk => async (dispatch) => {
   }
 };
 
-export const getShowTrailers = (id: number): ShowThunk => async (dispatch) => {
+export const getShowTrailers = (id: string): ShowThunk => async (dispatch) => {
   try {
     const res = await movieDB.get(
       `tv/${id}/videos?api_key=${apiKey}&language=en-US`
@@ -128,7 +128,7 @@ export const getShowTrailers = (id: number): ShowThunk => async (dispatch) => {
   }
 };
 
-export const getSimilarShows = (id: number): ShowThunk => async (dispatch) => {
+export const getSimilarShows = (id: string): ShowThunk => async (dispatch) => {
   try {
     const res = await movieDB.get(
       `tv/${id}/similar?api_key=${apiKey}&language=en-US&page=1`
@@ -142,7 +142,7 @@ export const getSimilarShows = (id: number): ShowThunk => async (dispatch) => {
   }
 };
 
-export const getShowById = (id: number): ShowThunk => async (dispatch) => {
+export const getShowById = (id: string): ShowThunk => async (dispatch) => {
   try {
     const res = await movieDB.get(`tv/${id}?api_key=${apiKey}&language=en-US`);
     dispatch({
@@ -166,7 +166,7 @@ export const getTrendingShows = (): ShowThunk => async (dispatch) => {
   }
 };
 
-export const getShowActors = (id: number): ShowThunk => async (dispatch) => {
+export const getShowActors = (id: string): ShowThunk => async (dispatch) => {
   try {
     const res = await movieDB.get(
       `person/${id}/tv_credits?api_key=${apiKey}&language=en-US`
@@ -194,5 +194,14 @@ export const getShowsForHomePage = (): ShowThunk => async (dispatch) => {
   dispatch(setShowLoading());
   dispatch(getPopularShows());
   dispatch(getTopRatedShows());
+  dispatch(removeShowLoading());
+};
+
+export const getShow = (id: string): ShowThunk => async (dispatch) => {
+  dispatch(setShowLoading());
+  dispatch(getShowById(id));
+  dispatch(getShowTrailers(id));
+  dispatch(getSimilarShows(id));
+  dispatch(getShowActors(id));
   dispatch(removeShowLoading());
 };

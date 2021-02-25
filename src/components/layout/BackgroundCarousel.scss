@@ -3,6 +3,8 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  // Problems with api, changing auto size
+  background-size: cover !important;
   &-btn {
     z-index: 1;
     position: absolute;
@@ -29,19 +31,7 @@
         animation: scrollBottom 0.5s alternate ease infinite;
         font-size: 4rem;
       }
-      //       .scroll-to-bottom .icon {
-      //   margin-top: 10px;
-      //   animation: scrollBottom 0.5s alternate ease infinite;
-      // }
 
-      // @keyframes scrollBottom {
-      //   from {
-      //     transform: translateY(-1px);
-      //   }
-      //   to {
-      //     transform: translateY(2px);
-      //   }
-      // }
       &:hover {
         background: #5f1c92;
         color: #d6d8d8;

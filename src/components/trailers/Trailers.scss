@@ -1,0 +1,18 @@
+.trailers-section {
+  width: 80%;
+  margin: auto;
+  &-heading {
+    margin: 30px 0;
+  }
+  &-videos {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    &__video {
+      margin: 0px 15px 25px 15px;
+      width: 300px;
+      height: 180px;
+      border: none;
+    }
+  }
+}

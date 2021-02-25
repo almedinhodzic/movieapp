@@ -141,7 +141,7 @@ export const searchMoviesAndShows = (name: string): MovieThunk => async (
   }
 };
 
-export const getMovieById = (id: number): MovieThunk => async (dispatch) => {
+export const getMovieById = (id: string): MovieThunk => async (dispatch) => {
   try {
     const res = await movieDB.get(
       `movie/${id}?api_key=${apiKey}&language=en-US`
@@ -155,12 +155,12 @@ export const getMovieById = (id: number): MovieThunk => async (dispatch) => {
   }
 };
 
-export const getSimilarMovies = (id: number): MovieThunk => async (
+export const getSimilarMovies = (id: string): MovieThunk => async (
   dispatch
 ) => {
   try {
     const res = await movieDB.get(
-      `movie/${id}?api_key=${apiKey}&language=en-US`
+      `movie/${id}/similar?api_key=${apiKey}&language=en-US&page=1`
     );
     dispatch({
       type: GET_SIMILAR_MOVIES,
@@ -185,7 +185,7 @@ export const getMovieGenres = (): MovieThunk => async (dispatch) => {
   }
 };
 
-export const getMovieActors = (id: number): MovieThunk => async (dispatch) => {
+export const getMovieActors = (id: string): MovieThunk => async (dispatch) => {
   try {
     const res = await movieDB.get(
       `movie/${id}/credits?api_key=${apiKey}&language=en-US`
@@ -199,7 +199,7 @@ export const getMovieActors = (id: number): MovieThunk => async (dispatch) => {
   }
 };
 
-export const getMovieTrailers = (id: number): MovieThunk => async (
+export const getMovieTrailers = (id: string): MovieThunk => async (
   dispatch
 ) => {
   try {
@@ -230,5 +230,14 @@ export const getMoviesForHomePage = (): MovieThunk => async (dispatch) => {
   dispatch(getTrendingHomePage());
   dispatch(getPopularMovies());
   dispatch(getTopRatedMovies());
+  dispatch(removeMovieLoading());
+};
+
+export const getMovieContent = (id: string): MovieThunk => async (dispatch) => {
+  dispatch(setMovieLoading());
+  dispatch(getMovieById(id));
+  dispatch(getSimilarMovies(id));
+  dispatch(getMovieActors(id));
+  dispatch(getMovieTrailers(id));
   dispatch(removeMovieLoading());
 };
