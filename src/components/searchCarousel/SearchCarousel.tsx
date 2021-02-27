@@ -26,7 +26,7 @@ const SearchCarousel: React.FC<Props> = ({
         className="search-carousel-content-poster"
       >
         <img
-          src={`https://image.tmdb.org/t/p/w185${posterImage || profileImage}`}
+          src={`https://image.tmdb.org/t/p/w185/${posterImage || profileImage}`}
           alt="poster"
           className="search-carousel-content-poster__image"
         />

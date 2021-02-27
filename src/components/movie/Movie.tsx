@@ -48,7 +48,6 @@ const Movie: React.FC = () => {
         <ActorsCarousel
           heading="ACTORS IN THIS MOVIE"
           cast={movieActors.cast}
-          type="actor"
         />
       )}
       {similarMovies?.results && (

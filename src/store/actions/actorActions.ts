@@ -37,7 +37,7 @@ export const removeActorLoading = (): ActorAction => {
   };
 };
 
-export const getActorById = (id: number): ActorThunk => async (dispatch) => {
+export const getActorById = (id: string): ActorThunk => async (dispatch) => {
   try {
     const res = await movieDB.get(
       `person/${id}?api_key=${apiKey}&language=en-US`
@@ -51,7 +51,7 @@ export const getActorById = (id: number): ActorThunk => async (dispatch) => {
   }
 };
 
-export const getActorMoviesShows = (id: number): ActorThunk => async (
+export const getActorMoviesShows = (id: string): ActorThunk => async (
   dispatch
 ) => {
   try {
@@ -79,4 +79,11 @@ export const getPopularActors = (): ActorThunk => async (dispatch) => {
   } catch (error) {
     dispatch(setActorError(error.response.data.status_message));
   }
+};
+
+export const getActor = (id: string): ActorThunk => async (dispatch) => {
+  dispatch(setActorLoading());
+  dispatch(getActorById(id));
+  dispatch(getActorMoviesShows(id));
+  dispatch(removeActorLoading());
 };

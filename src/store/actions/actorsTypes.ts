@@ -16,11 +16,13 @@ export interface ActorInfos {
 
 export interface ActorCast {
   overview: string;
-  title: string;
+  title?: string;
+  name?: string;
   poster_path: string | null;
   character: string;
   id: number;
   media_type: string;
+  backdrop_path: string | null;
 }
 
 export interface ActorMoviesAndShows {

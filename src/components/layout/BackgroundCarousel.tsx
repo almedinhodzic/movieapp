@@ -12,7 +12,7 @@ const BackgroundCarousel: React.FC<Props> = ({ results, desc }: Props) => {
   const [current, setCurrent] = useState(0);
   const { length } = results;
   const nextSlide = (): void => {
-    setCurrent(current === length ? 0 : current + 1);
+    setCurrent(current + 1 === length ? 0 : current + 1);
   };
   const prevSlide = (): void => {
     setCurrent(current === 0 ? length - 1 : current - 1);
@@ -71,8 +71,7 @@ const BackgroundCarousel: React.FC<Props> = ({ results, desc }: Props) => {
             {index === current && (
               <div
                 style={{
-                  background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://image.tmdb.org/t/p/original${item.backdrop_path}") no-repeat`,
-                  backgroundSize: "cover",
+                  background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://image.tmdb.org/t/p/original/${item.backdrop_path}") no-repeat`,
                 }}
                 className="slider-section-slide-main"
               >
@@ -86,7 +85,7 @@ const BackgroundCarousel: React.FC<Props> = ({ results, desc }: Props) => {
                     className="slider-section-slide-main-content-item"
                   >
                     <img
-                      src={`https://image.tmdb.org/t/p/w185${item.poster_path}`}
+                      src={`https://image.tmdb.org/t/p/w185/${item.poster_path}`}
                       alt=""
                       className="slider-section-slide-main-content-item__image"
                     />

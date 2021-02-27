@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.scss";
+import Actor from "./components/actors/Actor";
 import PopularActors from "./components/actors/PopularActors";
 import Footer from "./components/footer/Footer";
 import Home from "./components/home/Home";
@@ -58,6 +59,7 @@ const App: React.FC = () => {
         />
         <Route path="/show/:id" exact component={Show} />
         <Route path="/actors" exact component={PopularActors} />
+        <Route path="/actor/:id" exact component={Actor} />
         <Route path="/search/:name" exact component={SearchResults} />
       </Switch>
       <Footer />

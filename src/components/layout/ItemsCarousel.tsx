@@ -53,7 +53,7 @@ const ItemsCarousel: React.FC<Props> = ({ heading, results, type }: Props) => {
                   }
                 >
                   <img
-                    src={`https://image.tmdb.org/t/p/w185${item.poster_path}`}
+                    src={`https://image.tmdb.org/t/p/w185/${item.poster_path}`}
                     key={item.id}
                     alt=""
                     className="items-slider-section-posters-poster__image"

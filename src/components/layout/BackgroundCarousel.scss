@@ -3,8 +3,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  // Problems with api, changing auto size
-  background-size: cover !important;
+
   &-btn {
     z-index: 1;
     position: absolute;
@@ -50,6 +49,8 @@
     &-main {
       height: 100%;
       position: relative;
+      // Problems with api, changing auto size
+      background-size: cover !important;
       &-content {
         position: absolute;
         height: 200px;

@@ -37,7 +37,7 @@ const ShowCarousel: React.FC<Props> = ({
       className="movie-section"
       ref={ref}
       style={{
-        background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://image.tmdb.org/t/p/original${backgroundImage}") no-repeat`,
+        background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url("https://image.tmdb.org/t/p/original/${backgroundImage}") no-repeat`,
         backgroundSize: "cover",
       }}
     >
@@ -50,7 +50,7 @@ const ShowCarousel: React.FC<Props> = ({
       </button>
       <div className="movie-section-poster">
         <img
-          src={`https://image.tmdb.org/t/p/w185${posterImage}`}
+          src={`https://image.tmdb.org/t/p/w185/${posterImage}`}
           className="movie-section-poster__image"
           alt=""
         />

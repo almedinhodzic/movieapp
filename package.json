@@ -15,6 +15,7 @@
   "author": "Almedin Hodzic",
   "license": "ISC",
   "dependencies": {
+    "@types/moment": "^2.13.0",
     "@types/react-redux": "^7.1.16",
     "axios": "^0.21.1",
     "moment": "^2.29.1",
