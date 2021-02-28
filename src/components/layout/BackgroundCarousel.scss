@@ -1,3 +1,4 @@
+@import "../styles/variables";
 .slider-section {
   height: 91vh;
   position: relative;
@@ -9,13 +10,13 @@
     position: absolute;
     top: 50%;
     background: transparent;
-    color: #d6d8d8;
+    color: $primary-font-color;
     font-size: 3rem;
     border: none;
     outline: none;
     cursor: pointer;
     &:hover {
-      color: #a084e9;
+      color: $secondary-font-color;
     }
     &__left {
       left: 32px;
@@ -29,11 +30,6 @@
       &__icon {
         animation: scrollBottom 0.5s alternate ease infinite;
         font-size: 4rem;
-      }
-
-      &:hover {
-        background: #5f1c92;
-        color: #d6d8d8;
       }
     }
   }
@@ -56,7 +52,7 @@
         height: 200px;
         bottom: 8%;
         left: 10%;
-        color: #d6d8d8;
+        color: $primary-font-color;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -69,7 +65,7 @@
           &__heading {
             text-decoration: none;
             color: #f1f1f1;
-            font-size: 2rem;
+            font-size: 1.7rem;
           }
           &__desc,
           &__info {
@@ -87,5 +83,91 @@
   }
   to {
     transform: translateY(2px);
+  }
+}
+
+@media (max-width: 768px) {
+  .slider-section {
+    height: 50vh;
+    &-btn {
+      font-size: 1.5rem;
+      &__left {
+        left: 10px;
+      }
+      &__right {
+        right: 10px;
+      }
+      &__down {
+        display: none;
+      }
+    }
+    &-slide {
+      &-main {
+        &-content {
+          left: 5%;
+          height: 150px;
+          width: 350px;
+          left: 5%;
+          bottom: 5%;
+          &-item {
+            &__image {
+              height: 130px;
+              width: 150px;
+            }
+            &__heading {
+              text-decoration: none;
+              color: #f1f1f1;
+              font-size: 1.2rem;
+            }
+            &__desc,
+            &__info {
+              font-size: 0.7rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .slider-section {
+    &-btn {
+      font-size: 1rem;
+      &__left {
+        left: 7px;
+      }
+      &__right {
+        right: 7px;
+      }
+      &__down {
+        display: none;
+      }
+    }
+    &-slide {
+      &-main {
+        &-content {
+          height: 120px;
+          width: 300px;
+          left: 5%;
+          bottom: 5%;
+          &-item {
+            &__image {
+              height: 80px;
+              width: 100px;
+            }
+            &__heading {
+              text-decoration: none;
+              color: #f1f1f1;
+              font-size: 1.2rem;
+            }
+            &__desc,
+            &__info {
+              font-size: 0.7rem;
+            }
+          }
+        }
+      }
+    }
   }
 }

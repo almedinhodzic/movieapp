@@ -66,7 +66,7 @@ const Footer: React.FC = () => {
             Actors <i className="fas fa-users" />
           </h4>
           <Link to="/actors" className="footer-main-section__link">
-            Popular Actors
+            Popular Actors Today
           </Link>
         </div>
         <div className="footer-main-section-logo">

@@ -1,9 +1,10 @@
+@import "../styles/variables";
 .main-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 9vh;
-  background: #242526;
+  background: $secondary-color;
   padding: 20px 40px;
   position: fixed;
   z-index: 100;
@@ -29,11 +30,11 @@
     &__link {
       margin-left: 30px;
       letter-spacing: 3px;
-      color: #d6d8d8;
+      color: $primary-font-color;
       text-decoration: none;
       transition: color 450ms;
       &:hover {
-        color: #a084e9;
+        color: $secondary-font-color;
       }
     }
   }
@@ -93,5 +94,14 @@
   }
   &__line3 {
     transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
+@media (max-width: 500px) {
+  .main-nav {
+    padding: 20px 20px;
+  }
+  .main-nav-logo {
+    margin-right: 10px;
   }
 }

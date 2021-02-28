@@ -1,3 +1,4 @@
+@import "../styles/variables";
 #preloader {
   position: fixed;
   top: 0;
@@ -15,7 +16,7 @@
   margin: -75px 0 0 -75px;
   border-radius: 50%;
   border: 5px solid transparent;
-  border-top-color: #9370db;
+  border-top-color: $secondary-font-color;
   -webkit-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
@@ -28,7 +29,7 @@
   bottom: 5px;
   border-radius: 50%;
   border: 4px solid transparent;
-  border-top-color: #ba55d3;
+  border-top-color: $primary-font-color;
   -webkit-animation: spin 3s linear infinite;
   animation: spin 3s linear infinite;
 }
@@ -41,7 +42,7 @@
   bottom: 15px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: #ff00ff;
+  border-top-color: $ternary-color;
   -webkit-animation: spin 1.5s linear infinite;
   animation: spin 1.5s linear infinite;
 }

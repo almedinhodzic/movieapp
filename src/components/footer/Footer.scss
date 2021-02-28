@@ -1,6 +1,7 @@
+@import "../styles/variables";
 .footer {
-  background: #242526;
-  color: #d6d8d8;
+  background: $secondary-color;
+  color: $primary-font-color;
   padding: 30px;
   margin-top: 50px;
   &-main-section {
@@ -16,10 +17,25 @@
       margin-top: 10px;
       transition: color 450ms;
       &:hover {
-        color: #a084e9;
+        color: $secondary-font-color;
       }
       &__name {
         text-align: center;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .footer {
+    padding: 30px;
+    margin-top: 50px;
+    &-main-section {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      & div {
+        margin: 20px;
       }
     }
   }

@@ -1,6 +1,10 @@
+@import "../styles/variables";
 .search-carousel {
   width: 80%;
   margin: 50px auto;
+  &-not-found {
+    margin-bottom: 200px;
+  }
   &__heading {
     font-size: 1.5rem;
   }
@@ -45,8 +49,18 @@
       &__title {
         display: block;
         text-decoration: none;
-        color: #cfd1d1;
+        color: $primary-font-color;
       }
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .search-carousel-content-poster {
+    height: 200px;
+    width: 150px;
+    &__image {
+      height: 190px;
     }
   }
 }

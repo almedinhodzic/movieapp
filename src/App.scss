@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Martel+Sans&display=swap");
+@import "./components/styles/variables";
 * {
   margin: 0;
   padding: 0;
@@ -14,8 +15,8 @@ body {
   padding-top: 9vh;
   height: 100%;
   width: 100%;
-  background: #18191a;
-  color: #d6d8d8;
+  background: $primary-color;
+  color: $primary-font-color;
 }
 
 ::-webkit-scrollbar {
@@ -24,15 +25,15 @@ body {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #d6d8d8;
+  background: $primary-font-color;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #6d1cac;
+  background: $ternary-color;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #6e1cacb0;
+  background: $secondary-font-color;
 }

@@ -34,7 +34,7 @@ const Home: React.FC = () => {
       {trendingHomePage?.results && (
         <BackgroundCarousel
           results={trendingHomePage.results}
-          desc="TRENDING IN MOVIES AND TV SHOWS"
+          desc="TRENDING MOVIES/SHOWS"
         />
       )}
       {popularMovies?.results && (

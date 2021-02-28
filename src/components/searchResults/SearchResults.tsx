@@ -24,7 +24,9 @@ const SearchResults: React.FC = () => {
         SEARCH RESULTS FOR {name.toUpperCase()}
       </h1>
       <div className="search-carousel__line" />
-      {searchResults?.results.length === 0 && <p>No Results For Your Search</p>}
+      {searchResults?.results.length === 0 && (
+        <p className="search-carousel-not-found">No Results For Your Search</p>
+      )}
       <div className="search-carousel-content">
         {searchResults?.results.map((item) => {
           return (
