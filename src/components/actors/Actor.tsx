@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { getActor } from "../../store/actions/actorActions";
+import { getActor, clearActor } from "../../store/actions/actorActions";
 import { RootState } from "../../store";
 
 import ActorBackground from "./ActorBackground";
@@ -14,8 +14,9 @@ interface ParamsType {
 const Actor: React.FC = () => {
   const dispatch = useDispatch();
   const { id } = useParams<ParamsType>();
-  useEffect(() => {
+  useEffect((): (() => void) => {
     dispatch(getActor(id));
+    return () => dispatch(clearActor());
   }, [id, dispatch]);
   const actor = useSelector((state: RootState) => state.actors.singleActor);
   const moviesShows = useSelector(

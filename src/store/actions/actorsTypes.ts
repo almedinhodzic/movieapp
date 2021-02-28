@@ -4,6 +4,7 @@ export const GET_POPULAR_ACTORS = "GET_POPULAR_ACTORS";
 export const SET_ACTORS_LOADING = "SET_ACTORS_LOADING";
 export const REMOVE_ACTORS_LOADING = "REMOVE_ACTORS_LOADING";
 export const SET_ACTORS_ERROR = "SET_ACTORS_ERROR";
+export const CLEAR_ACTOR = "CLEAR_ACTOR";
 
 export interface ActorInfos {
   name: string;
@@ -76,10 +77,15 @@ interface SetActorErrorAction {
   payload: string;
 }
 
+interface ClearActorAction {
+  type: typeof CLEAR_ACTOR;
+}
+
 export type ActorAction =
   | GetActorInfosAction
   | GetPopularActorsAction
   | GetActorMoviesAndShowsAction
   | SetActorLoadingAction
   | RemoveActorLoadingAction
-  | SetActorErrorAction;
+  | SetActorErrorAction
+  | ClearActorAction;

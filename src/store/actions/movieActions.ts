@@ -18,6 +18,7 @@ import {
   SET_MOVIE_ERROR,
   GET_TRENDING_HOME_PAGE,
   MoviesAction,
+  CLEAR_MOVIE,
 } from "./movieTypes";
 
 export type MovieThunk<ReturnType = void> = ThunkAction<
@@ -43,6 +44,12 @@ export const setMovieLoading = (): MoviesAction => {
 export const removeMovieLoading = (): MoviesAction => {
   return {
     type: REMOVE_MOVIE_LOADING,
+  };
+};
+
+export const clearMovie = (): MoviesAction => {
+  return {
+    type: CLEAR_MOVIE,
   };
 };
 

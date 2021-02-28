@@ -16,6 +16,7 @@ import {
   SEARCH_MOVIES,
   MovieState,
   MoviesAction,
+  CLEAR_MOVIE,
 } from "../actions/movieTypes";
 
 const initialState: MovieState = {
@@ -128,7 +129,15 @@ const movieReducer = (
         multiSearch: action.payload,
         error: "",
       };
-
+    case CLEAR_MOVIE:
+      return {
+        ...state,
+        singleMovie: null,
+        similarMovies: null,
+        movieActors: null,
+        movieTrailers: null,
+        error: "",
+      };
     default:
       return state;
   }

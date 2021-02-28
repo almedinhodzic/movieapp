@@ -1,0 +1,16 @@
+.not-found-section {
+  height: 91vh;
+  width: 80%;
+  margin: auto;
+  padding: 50px;
+  text-align: center;
+  & h1 {
+    font-size: 7rem;
+  }
+  & h2 {
+    font-size: 3rem;
+  }
+  & p {
+    font-size: 1.5rem;
+  }
+}

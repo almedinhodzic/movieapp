@@ -15,6 +15,7 @@ import {
   SET_SHOW_LOADING,
   REMOVE_SHOW_LOADING,
   SET_SHOW_ERROR,
+  CLEAR_SHOW,
   ShowAction,
 } from "./tvShowsTypes";
 
@@ -41,6 +42,12 @@ export const setShowLoading = (): ShowAction => {
 export const removeShowLoading = (): ShowAction => {
   return {
     type: REMOVE_SHOW_LOADING,
+  };
+};
+
+export const clearShow = (): ShowAction => {
+  return {
+    type: CLEAR_SHOW,
   };
 };
 

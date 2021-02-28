@@ -14,6 +14,7 @@ import {
   SET_SHOW_ERROR,
   ShowAction,
   ShowState,
+  CLEAR_SHOW,
 } from "../actions/tvShowsTypes";
 
 const initialState: ShowState = {
@@ -107,6 +108,12 @@ const showReducer = (state = initialState, action: ShowAction): ShowState => {
       return {
         ...state,
         error: action.payload,
+      };
+    case CLEAR_SHOW:
+      return {
+        ...state,
+        singleShow: null,
+        error: "",
       };
 
     default:

@@ -45,23 +45,27 @@ const ItemsCarousel: React.FC<Props> = ({ heading, results, type }: Props) => {
           <div className="items-slider-section-posters" ref={scrollRef}>
             {results.map((item) => {
               return (
-                <Link
-                  key={item.id}
-                  className="items-slider-section-posters-poster"
-                  to={
-                    type === "movie" ? `/movie/${item.id}` : `/show/${item.id}`
-                  }
-                >
-                  <img
-                    src={`https://image.tmdb.org/t/p/w185/${item.poster_path}`}
+                item.poster_path && (
+                  <Link
                     key={item.id}
-                    alt=""
-                    className="items-slider-section-posters-poster__image"
-                  />
-                  <div className="items-slider-section-posters-poster__icon">
-                    {item.vote_average} <i className="fas fa-star" />
-                  </div>
-                </Link>
+                    className="items-slider-section-posters-poster"
+                    to={
+                      type === "movie"
+                        ? `/movie/${item.id}`
+                        : `/show/${item.id}`
+                    }
+                  >
+                    <img
+                      src={`https://image.tmdb.org/t/p/w185/${item.poster_path}`}
+                      key={item.id}
+                      alt=""
+                      className="items-slider-section-posters-poster__image"
+                    />
+                    <div className="items-slider-section-posters-poster__icon">
+                      {item.vote_average} <i className="fas fa-star" />
+                    </div>
+                  </Link>
+                )
               );
             })}
           </div>

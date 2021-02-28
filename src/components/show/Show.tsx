@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { RootState } from "../../store";
-import { getShow } from "../../store/actions/showActions";
+import { getShow, clearShow } from "../../store/actions/showActions";
 import ItemsCarousel from "../layout/ItemsCarousel";
 import Trailers from "../trailers/Trailers";
 import ShowCarousel from "./ShowCarousel";
@@ -14,8 +14,9 @@ interface ParamType {
 const Show: React.FC = () => {
   const { id } = useParams<ParamType>();
   const dispatch = useDispatch();
-  useEffect(() => {
+  useEffect((): (() => void) => {
     dispatch(getShow(id));
+    return () => dispatch(clearShow());
   }, [id, dispatch]);
   const show = useSelector((state: RootState) => state.shows.singleShow);
   const trailers = useSelector((state: RootState) => state.shows.showTrailers);

@@ -13,6 +13,7 @@ export const GET_TRENDING_HOME_PAGE = "GET_TRENDING_HOME_PAGE";
 export const GET_TRAILERS = "GET_TRAILERS";
 export const GET_MOVIE_ACTORS = "GET_MOVIE_ACTORS";
 export const SET_MOVIE_ERROR = "SET_MOVIE_ERROR";
+export const CLEAR_MOVIE = "CLEAR_MOVIE";
 
 export interface Results {
   backdrop_path?: string | null;
@@ -165,6 +166,10 @@ interface RemoveMovieLoadingAction {
   type: typeof REMOVE_MOVIE_LOADING;
 }
 
+interface ClearMovieAction {
+  type: typeof CLEAR_MOVIE;
+}
+
 interface SetMovieErrorAction {
   type: typeof SET_MOVIE_ERROR;
   payload: string;
@@ -185,4 +190,5 @@ export type MoviesAction =
   | GetTrendingHomePageAction
   | SetMovieLoadingAction
   | RemoveMovieLoadingAction
-  | SetMovieErrorAction;
+  | SetMovieErrorAction
+  | ClearMovieAction;

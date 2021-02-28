@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getMovieContent } from "../../store/actions/movieActions";
+import { getMovieContent, clearMovie } from "../../store/actions/movieActions";
 import { RootState } from "../../store";
 import MovieCarousel from "../layout/MovieCarousel";
 import ActorsCarousel from "../actors/ActorsCarousel";
@@ -15,8 +15,9 @@ interface ParamTypes {
 const Movie: React.FC = () => {
   const dispatch = useDispatch();
   const { id } = useParams<ParamTypes>();
-  useEffect(() => {
+  useEffect((): (() => void) => {
     dispatch(getMovieContent(id));
+    return () => dispatch(clearMovie());
   }, [id, dispatch]);
   const movie = useSelector((state: RootState) => state.movies.singleMovie);
   const movieActors = useSelector(
@@ -28,6 +29,7 @@ const Movie: React.FC = () => {
   const trailers = useSelector(
     (state: RootState) => state.movies.movieTrailers
   );
+
   return (
     <>
       {movie && (

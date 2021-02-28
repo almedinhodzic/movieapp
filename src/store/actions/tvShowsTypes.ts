@@ -20,6 +20,7 @@ export const GET_SHOW_ACTORS = "GET_SHOW_ACTORS";
 export const SET_SHOW_LOADING = "SET_SHOW_LOADING";
 export const REMOVE_SHOW_LOADING = "REMOVE_SHOW_LOADING";
 export const SET_SHOW_ERROR = "SET_SHOW_ERROR";
+export const CLEAR_SHOW = "CLEAR_SHOW";
 
 export interface Shows {
   results: Results[];
@@ -129,6 +130,10 @@ interface SetShowErrorLoading {
   payload: string;
 }
 
+interface ClearShowAction {
+  type: typeof CLEAR_SHOW;
+}
+
 export type ShowAction =
   | GetAiringTodayShowsAction
   | GetPopularShowsAction
@@ -142,4 +147,5 @@ export type ShowAction =
   | GetShowActorsAction
   | SetShowLoadingAction
   | RemoveShowLoadingAction
-  | SetShowErrorLoading;
+  | SetShowErrorLoading
+  | ClearShowAction;

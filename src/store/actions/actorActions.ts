@@ -8,6 +8,7 @@ import {
   SET_ACTORS_ERROR,
   SET_ACTORS_LOADING,
   REMOVE_ACTORS_LOADING,
+  CLEAR_ACTOR,
   ActorAction,
 } from "./actorsTypes";
 
@@ -34,6 +35,12 @@ export const setActorLoading = (): ActorAction => {
 export const removeActorLoading = (): ActorAction => {
   return {
     type: REMOVE_ACTORS_LOADING,
+  };
+};
+
+export const clearActor = (): ActorAction => {
+  return {
+    type: CLEAR_ACTOR,
   };
 };
 

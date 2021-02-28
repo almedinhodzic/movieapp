@@ -7,6 +7,7 @@ import {
   REMOVE_ACTORS_LOADING,
   ActorState,
   ActorAction,
+  CLEAR_ACTOR,
 } from "../actions/actorsTypes";
 
 const initialState: ActorState = {
@@ -54,6 +55,12 @@ const actorReducer = (
       return {
         ...state,
         error: action.payload,
+      };
+    case CLEAR_ACTOR:
+      return {
+        ...state,
+        singleActor: null,
+        error: "",
       };
     default:
       return state;
