@@ -14,7 +14,7 @@ const config = {
   },
   devtool: "eval-cheap-source-map",
   output: {
-    path: resolve(__dirname, "dist"),
+    path: resolve(__dirname, "build"),
     filename: "bundle.js",
     publicPath: "/",
   },
@@ -53,6 +53,7 @@ const config = {
     new HtmlWebpackPlugin({
       template: "./public/index.html",
       filename: "index.html",
+      favicon: "./src/assets/logo.png",
     }),
 
     new Dotenv(),
