@@ -22,6 +22,7 @@ In this project user can find newest movies and tv shows, most popular and top r
 - Redux
 - Typescript
 - Sass
+- Webpack 
 
 [Back To The Top](#MOVIEINFO)
 
