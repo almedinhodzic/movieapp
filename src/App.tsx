@@ -23,6 +23,7 @@ import TopRatedTvShows from "./components/shows/TopRatedShows";
 import { RootState } from "./store";
 import Loader from "./components/Loader/Loader";
 import NotFound from "./components/NotFound/NotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App: React.FC = () => {
   const movieLoading = useSelector((state: RootState) => state.movies.loading);
@@ -30,6 +31,7 @@ const App: React.FC = () => {
   const actorLoading = useSelector((state: RootState) => state.actors.loading);
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       {movieLoading || showLoading || actorLoading ? (
         <Loader />

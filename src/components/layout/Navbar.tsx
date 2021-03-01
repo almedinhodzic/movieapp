@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import useOnClickOutside from "./useOnClickOutside";
 import "./Navbar.scss";
 import Search from "../search/Search";
+import logo from "../../assets/logo.png";
 
 const Navbar: React.FC = () => {
   const ref = useRef(null);
@@ -18,11 +19,7 @@ const Navbar: React.FC = () => {
     <nav className="main-nav" ref={ref}>
       <div className="main-nav-left-section">
         <Link to="/" className="main-nav-logo">
-          <img
-            src="\src\assets\logo.png"
-            alt=""
-            className="main-nav-logo__img"
-          />
+          <img src={logo} alt="" className="main-nav-logo__img" />
         </Link>
         <Search />
       </div>
